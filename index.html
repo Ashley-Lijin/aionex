@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIONEX 2K26 — Where Innovation Meets Intelligence</title>
+    <meta name="description"
+        content="AIONEX 2K26 is a premier college technical symposium featuring hackathons, coding contests, AI quizzes, and more. Join us for a day of innovation and intelligence.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- TailwindCSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#080400',
+                            800: '#0d0800',
+                            700: '#1a0e00',
+                            600: '#241400',
+                        },
+                        neon: {
+                            blue: '#ff6a00',
+                            purple: '#ff9500',
+                            cyan: '#ffcc00',
+                            pink: '#ff4500',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark-900 text-white font-inter antialiased overflow-x-hidden" style="background-color:#080400">
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 min-w-0">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group min-w-0 overflow-hidden">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center font-orbitron font-bold text-sm tracking-wider group-hover:shadow-lg group-hover:shadow-neon-blue/30 transition-all duration-300 text-dark-900">
+                        AX
+                    </div>
+                    <span class="font-orbitron text-lg font-semibold tracking-wider hidden sm:block">AIONEX</span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#home"
+                        class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wide">Home</a>
+                    <a href="#events"
+                        class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wide">Events</a>
+                    <a href="#faculty"
+                        class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wide">Faculty</a>
+                    <a href="#contact"
+                        class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 tracking-wide">Contact</a>
+                </div>
+
+                <!-- Register CTA -->
+                <div class="hidden md:block">
+                    <a href="https://forms.gle/pqtGpZKeccSck1GG6" target="_blank"
+                        class="register-btn px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">
+                        Register Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 group shrink-0"
+                    aria-label="Toggle menu">
+                    <span
+                        class="menu-line w-6 h-0.5 bg-white/80 rounded-full transition-all duration-300 origin-center"></span>
+                    <span class="menu-line w-6 h-0.5 bg-white/80 rounded-full transition-all duration-300"></span>
+                    <span
+                        class="menu-line w-4 h-0.5 bg-white/80 rounded-full transition-all duration-300 origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mobile-menu-closed overflow-hidden transition-all duration-500"
+            style="background:rgba(8,4,0,0.85);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(255,106,0,0.08);">
+            <div class="px-6 pb-6 pt-2 border-t border-white/5">
+                <div class="flex flex-col gap-4">
+                    <a href="#home"
+                        class="mobile-nav-link text-base font-medium text-white/70 hover:text-white py-2 transition-colors duration-300">Home</a>
+                    <a href="#events"
+                        class="mobile-nav-link text-base font-medium text-white/70 hover:text-white py-2 transition-colors duration-300">Events</a>
+                    <a href="#faculty"
+                        class="mobile-nav-link text-base font-medium text-white/70 hover:text-white py-2 transition-colors duration-300">Faculty</a>
+                    <a href="#contact"
+                        class="mobile-nav-link text-base font-medium text-white/70 hover:text-white py-2 transition-colors duration-300">Contact</a>
+                    <a href="https://forms.gle/pqtGpZKeccSck1GG6" target="_blank"
+                        class="register-btn text-center px-6 py-3 rounded-full text-sm font-semibold tracking-wide mt-2 transition-all duration-300">Register
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Effects -->
+        <div class="hero-bg-gradient absolute inset-0"></div>
+        <div class="hero-grid absolute inset-0 opacity-[0.03]"></div>
+        <canvas id="particles-canvas" class="absolute inset-0 z-0"></canvas>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-24">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left: Content -->
+                <div class="hero-content">
+                    <div
+                        class="hero-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-blue/20 bg-neon-blue/5 mb-8 opacity-0">
+                        <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                        <span class="text-xs font-medium text-neon-cyan tracking-widest uppercase">A National Level
+                            Symposium</span>
+                    </div>
+
+                    <h1
+                        class="hero-title font-orbitron text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tighter mb-6 opacity-0">
+                        <span class="block text-gradient">AIONEX</span>
+                        <span
+                            class="block text-white/90 text-3xl sm:text-4xl lg:text-5xl font-semibold mt-2 tracking-tight">2K26</span>
+                    </h1>
+
+                    <p
+                        class="hero-tagline text-lg sm:text-xl text-white/50 font-light leading-relaxed max-w-lg mb-4 opacity-0">
+                        Where Innovation Meets Intelligence
+                    </p>
+
+                    <div
+                        class="hero-details flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-white/40 mb-10 opacity-0">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="calendar" class="w-4 h-4 text-neon-blue"></i>
+                            <span>March 28, 2026</span>
+                        </div>
+                        <span class="hidden sm:block text-white/10">|</span>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-neon-purple"></i>
+                            <span>Mar Ephraem College of Engineering and Technology</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons flex flex-col sm:flex-row gap-4 opacity-0">
+                        <a href="https://forms.gle/pqtGpZKeccSck1GG6" target="_blank"
+                            class="glow-btn-primary px-8 py-4 rounded-full text-sm font-semibold tracking-wide text-center transition-all duration-300">
+                            Register Now
+                        </a>
+                        <a href="#events"
+                            class="glow-btn-secondary px-8 py-4 rounded-full text-sm font-semibold tracking-wide text-center transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Explore Events</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Hero Illustration -->
+                <div class="hero-image relative flex justify-center lg:justify-end opacity-0">
+                    <div class="relative w-full max-w-md lg:max-w-lg">
+                        <div class="hero-img-glow absolute inset-0 bg-neon-blue/10 blur-[100px] rounded-full"></div>
+                        <img src="assets/hero.png" alt="AI Neural Network Illustration"
+                            class="relative z-10 w-full h-auto rounded-3xl floating-animation">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 scroll-indicator opacity-0">
+            <div class="flex flex-col items-center gap-2 text-white/20">
+                <span class="text-xs tracking-[0.3em] uppercase">Scroll</span>
+                <div class="w-px h-8 bg-gradient-to-b from-white/30 to-transparent scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EVENTS SECTION ===================== -->
+    <section id="events" class="relative py-32 lg:py-40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20 events-header">
+                <p class="text-neon-cyan text-xs font-semibold tracking-[0.3em] uppercase mb-4 opacity-0 event-label">
+                    What's Happening</p>
+                <h2
+                    class="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight opacity-0 event-title">
+                    <span class="text-gradient">Events</span>
+                </h2>
+            </div>
+
+            <!-- Technical Events -->
+            <div class="mb-8">
+                <div class="flex items-center gap-4 mb-12 tech-separator opacity-0">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-blue/30 to-transparent"></div>
+                    <div
+                        class="flex items-center gap-3 px-6 py-2 rounded-full border border-neon-blue/20 bg-neon-blue/5">
+                        <i data-lucide="cpu" class="w-4 h-4 text-neon-blue"></i>
+                        <span class="text-sm font-semibold text-neon-blue tracking-wider uppercase font-space">Technical
+                            Events</span>
+                    </div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-blue/30 to-transparent"></div>
+                </div>
+                <div id="technical-events-grid" class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+
+            <!-- Non-Technical Events -->
+            <div class="mt-24">
+                <div class="flex items-center gap-4 mb-12 nontech-separator opacity-0">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent"></div>
+                    <div
+                        class="flex items-center gap-3 px-6 py-2 rounded-full border border-neon-purple/20 bg-neon-purple/5">
+                        <i data-lucide="palette" class="w-4 h-4 text-neon-purple"></i>
+                        <span
+                            class="text-sm font-semibold text-neon-purple tracking-wider uppercase font-space">Non-Technical
+                            Events</span>
+                    </div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent"></div>
+                </div>
+                <div id="non-technical-events-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+
+            <!-- Common Register Button -->
+            <div class="text-center mt-20">
+                <a href="https://forms.gle/pqtGpZKeccSck1GG6" target="_blank"
+                    class="glow-btn-primary px-12 py-5 rounded-full text-base font-bold tracking-wide inline-flex items-center gap-3 transition-all duration-300">
+                    Register for Events
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <p class="text-white/30 text-sm mt-4">One registration covers all events</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FACULTY SECTION ===================== -->
+    <section id="faculty" class="relative py-32 lg:py-40">
+        <div
+            class="section-bg-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-neon-purple/5 blur-[200px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20 faculty-header">
+                <p
+                    class="text-neon-purple text-xs font-semibold tracking-[0.3em] uppercase mb-4 opacity-0 faculty-label">
+                    The Team Behind</p>
+                <h2
+                    class="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight opacity-0 faculty-title">
+                    <span class="text-gradient-purple">Faculty</span>
+                </h2>
+            </div>
+
+            <!-- HOD & Symposium Coordinator — side by side -->
+            <div class="mb-20">
+                <div class="grid sm:grid-cols-2 gap-8 lg:gap-12 max-w-3xl mx-auto">
+                    <!-- HOD -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-8 faculty-separator opacity-0 justify-center">
+                            <i data-lucide="crown" class="w-4 h-4 text-neon-purple"></i>
+                            <span
+                                class="text-xs font-semibold text-neon-purple tracking-wider uppercase font-space">Head
+                                of Department</span>
+                        </div>
+                        <div id="faculty-hod" class="flex justify-center">
+                            <!-- HOD card injected by JS -->
+                        </div>
+                    </div>
+                    <!-- Symposium Coordinator -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-8 faculty-separator opacity-0 justify-center">
+                            <i data-lucide="award" class="w-4 h-4 text-neon-blue"></i>
+                            <span
+                                class="text-xs font-semibold text-neon-blue tracking-wider uppercase font-space">Symposium
+                                Coordinator</span>
+                        </div>
+                        <div id="faculty-symposium" class="flex justify-center">
+                            <!-- Symposium coordinator card injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Coordinators -->
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-12 faculty-separator opacity-0">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent"></div>
+                    <div
+                        class="flex items-center gap-3 px-6 py-2 rounded-full border border-neon-cyan/20 bg-neon-cyan/5">
+                        <i data-lucide="users" class="w-4 h-4 text-neon-cyan"></i>
+                        <span class="text-sm font-semibold text-neon-cyan tracking-wider uppercase font-space">Event
+                            Coordinators</span>
+                    </div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-neon-cyan/30 to-transparent"></div>
+                </div>
+                <div id="faculty-coordinators" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Coordinator cards injected by JS -->
+                </div>
+            </div>
+
+            <!-- Staff -->
+            <div>
+                <div class="flex items-center gap-4 mb-12 faculty-separator opacity-0">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div class="flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-white/5">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-white/60"></i>
+                        <span
+                            class="text-sm font-semibold text-white/60 tracking-wider uppercase font-space">Staff</span>
+                    </div>
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                </div>
+                <div id="faculty-staff" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Staff cards injected by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT / FOOTER ===================== -->
+    <footer id="contact" class="relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
+                <!-- Brand -->
+                <div class="footer-item opacity-0">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-[75px] h-[75px] rounded-xl bg-gradient-to-br from-neon-blue to-neon-purple flex items-center justify-center font-orbitron font-bold text-sm text-dark-900">
+                            ADFYI
+                        </div>
+                        <span class="font-orbitron text-lg font-semibold tracking-wider">Artificial Inteligence and Data
+                            Forge young Innovators</span>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed max-w-xs">
+                        A national-level technical symposium bringing together the brightest minds in technology and
+                        innovation.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-item opacity-0">
+                    <h3 class="text-sm font-semibold tracking-wider uppercase text-white/60 mb-6">Quick Links</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="#home"
+                            class="text-sm text-white/40 hover:text-neon-blue transition-colors duration-300">Home</a>
+                        <a href="#events"
+                            class="text-sm text-white/40 hover:text-neon-blue transition-colors duration-300">Events</a>
+                        <a href="#faculty"
+                            class="text-sm text-white/40 hover:text-neon-blue transition-colors duration-300">Faculty</a>
+                        <a href="#contact"
+                            class="text-sm text-white/40 hover:text-neon-blue transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-item opacity-0">
+                    <h3 class="text-sm font-semibold tracking-wider uppercase text-white/60 mb-6">Get In Touch</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:symposium@college.edu"
+                            class="flex items-center gap-3 text-sm text-white/40 hover:text-neon-cyan transition-colors duration-300">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>aionex2k26@gmail.com</span>
+                        </a>
+                        <a href="tel:+918438186479"
+                            class="flex items-center gap-3 text-sm text-white/40 hover:text-neon-cyan transition-colors duration-300">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+91 84381 86479</span>
+                        </a>
+                        <div class="flex items-start gap-3 text-sm text-white/40">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                            <span>Mar Ephraem College of Engineering and Technology, Elavuvilai, Kanyakumari </span>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-4 mt-6">
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-neon-blue/50 hover:bg-neon-blue/10 transition-all duration-300">
+                            <i data-lucide="instagram" class="w-4 h-4 text-white/50"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-neon-blue/50 hover:bg-neon-blue/10 transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-white/50"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-neon-blue/50 hover:bg-neon-blue/10 transition-all duration-300">
+                            <i data-lucide="twitter" class="w-4 h-4 text-white/50"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-white/5 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-white/30">© 2026 AIONEX 2K26. All rights reserved.</p>
+                <p class="text-xs text-white/20">Department of Artificial Inteligence and Data Science · Mar Ephraem
+                    College of Engineering and Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
