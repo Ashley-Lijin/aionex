@@ -112,13 +112,27 @@ const facultyCategories = {
     ],
     symposium: [
         {
-            name: "Mrs. Antush Fredian A",
+            name: "Mrs. Sherlin Y C",
             designation: "Assistant Professor",
-            role: "Symposium Coordinator & Paper Presentation Coordinator",
-            image: "assets/ANTUSH_FREDINA.png"
-        }
+            role: "",
+            image: "assets/sherlin.png"
+        },
+    ],
+    event: [
+        {
+            name: "Mrs. Ashlin Femi R N",
+            designation: "Assistant Professor",
+            role: "Event Coordinator",
+            image: "assets/ashlin.png"
+        },
     ],
     coordinators: [
+        {
+            name: "Mrs. Antush Fredian A",
+            designation: "Assistant Professor",
+            role: "Paper Presentation Coordinator",
+            image: "assets/ANTUSH_FREDINA.png"
+        },
         {
             name: "Ms. Jeffe Libi Shiny J",
             designation: "Assistant Professor",
@@ -142,12 +156,6 @@ const facultyCategories = {
             designation: "Assistant Professor",
             role: "Prompt Coordinator",
             image: "assets/ajitha.png"
-        },
-        {
-            name: "Mrs. Ashlin Femi R N",
-            designation: "Assistant Professor",
-            role: "Event Coordinator",
-            image: "assets/ashlin.png"
         },
         {
             name: "Mrs. Merlin Sheeba",
@@ -261,6 +269,7 @@ function renderFacultyCard(faculty, featured = false) {
 function renderFaculty() {
     const hodGrid = document.getElementById('faculty-hod');
     const symposiumGrid = document.getElementById('faculty-symposium');
+    const eventGrid = document.getElementById('faculty-event');
     const coordGrid = document.getElementById('faculty-coordinators');
     const staffGrid = document.getElementById('faculty-staff');
 
@@ -269,6 +278,9 @@ function renderFaculty() {
     }
     if (symposiumGrid) {
         symposiumGrid.innerHTML = facultyCategories.symposium.map(f => renderFacultyCard(f, true)).join('');
+    }
+    if (eventGrid) {
+        eventGrid.innerHTML = facultyCategories.event.map(f => renderFacultyCard(f, true)).join('');
     }
     if (coordGrid) {
         coordGrid.innerHTML = facultyCategories.coordinators.map(f => renderFacultyCard(f)).join('');
