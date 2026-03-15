@@ -33,6 +33,21 @@ const technicalEvents = [
         ]
     },
     {
+        name: "Prompt",
+        description: "Craft the perfect prompts to get AI to generate desired outputs. Master the art of prompt engineering.",
+        icon: "sparkles",
+        coordinator: { name: "Jothison", phone: "+91 94894 28051" },
+        rules: [
+            "Individual participation",
+            "AI tool will be provided",
+            "Judged on creativity and accuracy of output",
+            "Time limit: 20 minutes per challenge"
+        ]
+    }
+];
+
+const nonTechnicalEvents = [
+    {
         name: "Technical Quiz",
         description: "Test your knowledge on technology, programming, AI, and current trends in the tech world.",
         icon: "brain",
@@ -49,25 +64,10 @@ const technicalEvents = [
         ]
     },
     {
-        name: "Prompt",
-        description: "Craft the perfect prompts to get AI to generate desired outputs. Master the art of prompt engineering.",
-        icon: "sparkles",
-        coordinator: { name: "Jothison", phone: "+91 94894 28051" },
-        rules: [
-            "Individual participation",
-            "AI tool will be provided",
-            "Judged on creativity and accuracy of output",
-            "Time limit: 20 minutes per challenge"
-        ]
-    }
-];
-
-const nonTechnicalEvents = [
-    {
-        name: "Aginson",
+        name: "Spotify",
         description: "Guess the song from short clips and prove your musical knowledge. A fun and energetic challenge for music lovers.",
         icon: "music",
-        coordinator: { name: "Student Coordinator", phone: "+91 73958 87298" },
+        coordinator: { name: "Aginson", phone: "+91 73958 87298" },
         rules: [
             "Team of 2 members",
             "Multiple rounds with increasing difficulty",
@@ -162,27 +162,21 @@ const facultyCategories = {
             designation: "Assistant Professor",
             role: "Connection Puzzle Coordinator",
             image: "assets/def-ava.avif"
+        },
+        {
+            name: "Mr. Ramesh",
+            designation: "Assistant Professor",
+            role: "Spotify Coordinator",
+            image: "assets/def-ava.avif"
         }
     ],
     staff: [
-        {
-            name: "Mrs. Sherlin Y C",
-            designation: "Assistant Professor",
-            role: "",
-            image: "assets/sherlin.png"
-        },
         {
             name: "Mr. Jino Singh G",
             designation: "Assistant Professor",
             role: "",
             image: "assets/jino.png"
         },
-        {
-            name: "Mr. Ramesh",
-            designation: "Assistant Professor",
-            role: "",
-            image: "assets/def-ava.avif"
-        }
     ]
 };
 
@@ -217,7 +211,7 @@ function renderEventCard(event, type) {
                 <i data-lucide="${event.icon}" style="width:22px;height:22px;color:${accentColor}"></i>
             </div>
             <h3 class="font-space text-xl font-semibold text-white mb-3 tracking-tight">${event.name}</h3>
-            <p class="text-sm text-white/40 leading-relaxed mb-5">${event.description}</p>
+            <p class="text-sm text-white/40 leading-relaxed mb-5" style="flex-grow:1">${event.description}</p>
             <div class="border-t border-white/5 pt-4">
                 <div class="flex items-center gap-2 mb-1.5">
                     <i data-lucide="user" style="width:14px;height:14px;color:${accentColor};opacity:0.6"></i>
