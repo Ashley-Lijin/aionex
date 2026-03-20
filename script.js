@@ -185,7 +185,7 @@ const facultyCategories = {
             name: "Mrs. Merlin Sheeba",
             designation: "Assistant Professor",
             role: "Connection Puzzle Coordinator",
-            image: "assets/def-ava.avif"
+            image: "assets/merlin.jpg"
         },
         {
             name: "Mr. Ramesh",
