@@ -14,10 +14,13 @@ const technicalEvents = [
         icon: "file-text",
         coordinator: { name: "Aswin A", phone: "+91 78458 29455" },
         rules: [
-            "Team of 2 members",
-            "Presentation duration: 8 minutes + 2 minutes Q&A",
-            "Topics must be related to AI or Data Science",
-            "PPT must be submitted before the event"
+            "<span class='rule-key'>Team:</span> 1–2 participants per team",
+            "<span class='rule-key'>Topic:</span> Must be related to technology or emerging tech",
+            "<span class='rule-key'>Presentation:</span> 5 minutes per team",
+            "<span class='rule-key'>Q&A:</span> 1 minute with judges",
+            "<span class='rule-key'>Submission:</span> Bring PPT in a pen drive or submit PDF during registration",
+            "<span class='rule-key'>Offline:</span> Ensure presentation works without internet",
+            "<span class='rule-key'>File Name:</span> Use participant/team leader name for easy identification"
         ]
     },
     {
@@ -26,53 +29,66 @@ const technicalEvents = [
         icon: "bug",
         coordinator: { name: "Afzar", phone: "+91 75300 77048" },
         rules: [
-            "Individual participation",
-            "Time limit: 30 minutes",
-            "Languages: C, Python, or Java",
-            "No external resources allowed"
+            "Do not use mobile phones inside the event hall.",
+            "This event is divided into 2 Rounds.",
+            "<span class='rule-key'>Round 1:</span> 30 minutes — Pen and paper based.",
+            "Only winning participants from Round 1 proceed to Round 2.",
+            "<span class='rule-key'>Round 2:</span> 30 minutes — Software based.",
+            "The decision of the judges is final."
         ]
     },
     {
-        name: "Prompt",
+        name: "Prism AI",
         description: "Craft the perfect prompts to get AI to generate desired outputs. Master the art of prompt engineering.",
         icon: "sparkles",
         coordinator: { name: "Jothison", phone: "+91 94894 28051" },
         rules: [
-            "Individual participation",
-            "AI tool will be provided",
-            "Judged on creativity and accuracy of output",
-            "Time limit: 20 minutes per challenge"
+            "<span class='rule-key'>Round 1 — Logo Creation:</span>",
+            "Team: Individual or team of 2",
+            "Task: Write a prompt and generate a logo using AI (e.g., ChatGPT)",
+            "Topic: Given by organizers",
+            "Time: 8 minutes",
+            "Selection: Top scorers qualify for Round 2",
+            "<span class='rule-key'>Round 2 — Scenery Prompt:</span>",
+            "Team: Same participants continue",
+            "Task: Create a prompt using given keywords/characters and generate an image",
+            "Time: 10 minutes",
+            "Evaluation: Based on creativity and accuracy"
         ]
-    }
-];
-
-const nonTechnicalEvents = [
+    },
     {
         name: "Technical Quiz",
         description: "Test your knowledge on technology, programming, AI, and current trends in the tech world.",
         icon: "brain",
         coordinator: { name: "Sreejith", phone: "+91 77086 56064" },
         rules: [
-            "1.Participants must arrive on time and register before the event starts.",
-            "2.Teams will consist of 2 members each.",
-            "3.The quiz will be conducted in two rounds:",
-            "<span style='font-weight: bold;'>Round 1:</span> Technical questions related to Engineering",
-            "<span style='font-weight: bold;'>Round 2:</span> Rapid fire",
-            "4.30 seconds will be given for each question.",
-            "5.Top scoring students qualify for the next round.",
-            "6.No use of mobile phones or any external help during the quiz."
+            "Participants must arrive on time and register before the event starts.",
+            "Teams will consist of 2 members each.",
+            "The quiz will be conducted in two rounds:",
+            "<span class='rule-key'>Round 1:</span> Technical questions related to Engineering",
+            "<span class='rule-key'>Round 2:</span> Rapid fire",
+            "30 seconds will be given for each question.",
+            "Top scoring students qualify for the next round.",
+            "No use of mobile phones or any external help during the quiz."
         ]
     },
+];
+
+const nonTechnicalEvents = [
     {
         name: "Spotify",
         description: "Guess the song from short clips and prove your musical knowledge. A fun and energetic challenge for music lovers.",
         icon: "music",
         coordinator: { name: "Aginson", phone: "+91 73958 87298" },
         rules: [
-            "Team of 2 members",
-            "Multiple rounds with increasing difficulty",
-            "No using phones or Shazam",
-            "Covers all genres and languages"
+            "Team: 2 members per team",
+            "<span class='rule-key'>Round 1:</span> 20 questions — Top 10 teams qualify",
+            "<span class='rule-key'>Round 2:</span> 15 questions — Top 2 teams qualify",
+            "Time: 30 seconds per question",
+            "Final Task: Burst balloon → read proverb → sing a related song",
+            "<span class='rule-key'>Scoring:</span> Correct song → +1 mark; Wrong/No song → chance passes to next team",
+            "<span class='rule-key'>Negative Marking:</span> Wrong song / no answer / cheating → −1 mark",
+            "No mobile phones or external help allowed"
         ]
     },
     {
@@ -81,10 +97,18 @@ const nonTechnicalEvents = [
         icon: "puzzle",
         coordinator: { name: "Godson Lalu", phone: "+91 63691 20813" },
         rules: [
-            "Team of 2 members",
-            "Multiple rounds",
-            "Find the common link between given items",
-            "Time-based scoring"
+            "<span class='rule-key'>Round 1 — Connections:</span>",
+            "Team: 2 members per team",
+            "Questions: 10 questions displayed",
+            "Answering: Raise hand; first recognized team answers",
+            "Rule: No shouting answers",
+            "Scoring: +10 (correct), −5 (wrong)",
+            "Selection: Top teams qualify for next round",
+            "<span class='rule-key'>Round 2 — Puzzles:</span>",
+            "Task: Solve puzzle questions displayed on screen",
+            "Answering: Raise hand; first recognized team answers",
+            "Rule: No shouting answers",
+            "Scoring: +10 (correct)"
         ]
     },
     {
@@ -95,7 +119,7 @@ const nonTechnicalEvents = [
         rules: [
             "Individual participation",
             "Clues revealed one by one",
-            "Points decrease with each clue",
+            "Points decrease with each clue used",
             "Covers tech leaders, scientists, and pop culture"
         ]
     }
@@ -161,7 +185,7 @@ const facultyCategories = {
             name: "Mrs. Merlin Sheeba",
             designation: "Assistant Professor",
             role: "Connection Puzzle Coordinator",
-            image: "assets/def-ava.avif"
+            image: "assets/merlin.jpg"
         },
         {
             name: "Mr. Ramesh",
@@ -177,33 +201,80 @@ const facultyCategories = {
             role: "",
             image: "assets/jino.png"
         },
+        {
+            name: "Shobhana S",
+            designation: "Assistant Professor",
+            role: "",
+            image: "assets/shobhana.jpg"
+        }
+    ],
+    studentcoordinators: [
+        {
+            name: "Ashin J",
+            designation: "Student Coordinator",
+            role: "",
+            image: "assets/ashin.jpg"
+        },
+        {
+            name: "Arshek John J D",
+            designation: "Student Coordinator",
+            role: "",
+            image: "assets/arshekh.jpg"
+        }
     ]
 };
 
 // ─────────────────────────────────────────
 // RENDER: Event Cards
-// ───────────────────────────────────────  ──
+// ─────────────────────────────────────────
+
+const RULES_PREVIEW_COUNT = 3; // How many rules to show before "Read More"
 
 function renderEventCard(event, type) {
     const accentClass = type === 'tech' ? 'tech' : 'non-tech';
-    const accentColor = type === 'tech' ? '#ff6a00' : '#ff9500';
+    const accentColor = type === 'tech' ? '#c084fc' : '#e879f9';
+    const accentColorRgb = type === 'tech' ? '192,132,252' : '232,121,249';
 
-    const rulesHtml = event.rules && event.rules.length > 0
-        ? `<div class="border-t border-white/5 pt-4 mt-4">
+    let rulesHtml = '';
+    if (event.rules && event.rules.length > 0) {
+        const preview = event.rules.slice(0, RULES_PREVIEW_COUNT);
+        const rest = event.rules.slice(RULES_PREVIEW_COUNT);
+        const hasMore = rest.length > 0;
+
+        rulesHtml = `
+            <div class="rules-section border-t border-white/5 pt-4 mt-4">
                 <div class="flex items-center gap-2 mb-3">
                     <i data-lucide="scroll-text" style="width:14px;height:14px;color:${accentColor};opacity:0.7"></i>
                     <span class="text-xs font-semibold uppercase tracking-wider" style="color:${accentColor}">Rules</span>
                 </div>
-                <ul class="space-y-1.5">
-                    ${event.rules.map(rule => `
-                        <li class="flex items-start gap-2 text-xs text-white/35 leading-relaxed">
-                            <span style="color:${accentColor};opacity:0.5;margin-top:2px">•</span>
+                <ul class="rules-list space-y-1.5">
+                    ${preview.map(rule => `
+                        <li class="flex items-start gap-2 text-xs text-white/40 leading-relaxed">
+                            <span style="color:${accentColor};opacity:0.5;margin-top:2px;flex-shrink:0">•</span>
                             <span>${rule}</span>
                         </li>
                     `).join('')}
+                    ${hasMore ? `
+                    <li class="rules-extra hidden">
+                        <ul class="space-y-1.5">
+                            ${rest.map(rule => `
+                                <li class="flex items-start gap-2 text-xs text-white/40 leading-relaxed">
+                                    <span style="color:${accentColor};opacity:0.5;margin-top:2px;flex-shrink:0">•</span>
+                                    <span>${rule}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="read-more-btn mt-2 text-xs font-semibold flex items-center gap-1 transition-all duration-200" style="color:${accentColor}" onclick="toggleRules(this)" data-accent="${accentColor}" data-accent-rgb="${accentColorRgb}">
+                            <span class="btn-text">Read More</span>
+                            <i data-lucide="chevron-down" style="width:12px;height:12px" class="btn-icon transition-transform duration-200"></i>
+                        </button>
+                    </li>
+                    ` : ''}
                 </ul>
-           </div>`
-        : '';
+            </div>`;
+    }
 
     return `
         <div class="event-card ${type === 'non-tech' ? 'non-tech' : ''}" data-animate="event">
@@ -225,6 +296,26 @@ function renderEventCard(event, type) {
             ${rulesHtml}
         </div>
     `;
+}
+
+function toggleRules(btn) {
+    const rulesSection = btn.closest('.rules-section');
+    const extraLi = rulesSection.querySelector('.rules-extra');
+    const btnText = btn.querySelector('.btn-text');
+    const btnIcon = btn.querySelector('.btn-icon');
+    const isOpen = !extraLi.classList.contains('hidden');
+
+    if (isOpen) {
+        extraLi.classList.add('hidden');
+        btnText.textContent = 'Read More';
+        btnIcon.style.transform = 'rotate(0deg)';
+    } else {
+        extraLi.classList.remove('hidden');
+        btnText.textContent = 'Show Less';
+        btnIcon.style.transform = 'rotate(180deg)';
+    }
+    // Re-init icons in the newly revealed content
+    lucide.createIcons();
 }
 
 function renderEvents() {
@@ -252,9 +343,9 @@ function renderFacultyCard(faculty, featured = false) {
 
     return `
         <div class="${cardClass}" data-animate="faculty">
-            <img src="${faculty.image}" alt="${faculty.name}" class="${imgClass}" loading="lazy">
+            <img src="${faculty.image}" alt="${faculty.name}" class="${imgClass}" loading="lazy" style="object-position:center top">
             <h3 class="font-space text-lg font-semibold text-white mb-1">${faculty.name}</h3>
-            <p class="text-xs text-neon-purple/80 font-medium tracking-wide uppercase mb-2">${faculty.designation}</p>
+            <p class="text-xs font-medium tracking-wide uppercase mb-2" style="color:#c084fc">${faculty.designation}</p>
             ${roleHtml}
         </div>
     `;
@@ -266,6 +357,7 @@ function renderFaculty() {
     const eventGrid = document.getElementById('faculty-event');
     const coordGrid = document.getElementById('faculty-coordinators');
     const staffGrid = document.getElementById('faculty-staff');
+    const studentCoordGrid = document.getElementById('faculty-student-coordinators');
 
     if (hodGrid) {
         hodGrid.innerHTML = facultyCategories.hod.map(f => renderFacultyCard(f, true)).join('');
@@ -282,6 +374,9 @@ function renderFaculty() {
     if (staffGrid) {
         staffGrid.innerHTML = facultyCategories.staff.map(f => renderFacultyCard(f)).join('');
     }
+    if (studentCoordGrid && facultyCategories.studentcoordinators) {
+        studentCoordGrid.innerHTML = facultyCategories.studentcoordinators.map(f => renderFacultyCard(f)).join('');
+    }
 }
 
 // ─────────────────────────────────────────
@@ -294,7 +389,6 @@ function initParticles() {
 
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let animId;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -328,7 +422,7 @@ function initParticles() {
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 106, 0, ${p.opacity})`;
+            ctx.fillStyle = `rgba(${getParticleColor()}, ${p.opacity})`;
             ctx.fill();
 
             // Draw connections
@@ -341,14 +435,14 @@ function initParticles() {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(255, 106, 0, ${0.04 * (1 - dist / 120)})`;
+                    ctx.strokeStyle = `rgba(${getParticleColor()}, ${0.04 * (1 - dist / 120)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
             }
         });
 
-        animId = requestAnimationFrame(drawParticles);
+        requestAnimationFrame(drawParticles);
     }
 
     resize();
@@ -359,6 +453,51 @@ function initParticles() {
         resize();
         createParticles();
     });
+}
+
+// ─────────────────────────────────────────
+// THEME TOGGLE: Light / Dark
+// ─────────────────────────────────────────
+
+function getParticleColor() {
+    const style = getComputedStyle(document.documentElement);
+    return style.getPropertyValue('--particle-color').trim() || '192, 132, 252';
+}
+
+function initThemeToggle() {
+    const html = document.documentElement;
+    const saved = localStorage.getItem('aionex-theme');
+    if (saved) {
+        html.setAttribute('data-theme', saved);
+    }
+
+    function updateIcons() {
+        const isDark = html.getAttribute('data-theme') !== 'light';
+        document.querySelectorAll('.theme-icon-dark').forEach(el => {
+            el.style.display = isDark ? 'block' : 'none';
+        });
+        document.querySelectorAll('.theme-icon-light').forEach(el => {
+            el.style.display = isDark ? 'none' : 'block';
+        });
+    }
+
+    function toggle() {
+        const current = html.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('aionex-theme', next);
+        document.body.style.backgroundColor = getComputedStyle(html).getPropertyValue('--bg-body').trim();
+        updateIcons();
+        lucide.createIcons();
+    }
+
+    document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => {
+        btn.addEventListener('click', toggle);
+    });
+
+    // Apply saved theme on load
+    updateIcons();
+    document.body.style.backgroundColor = getComputedStyle(html).getPropertyValue('--bg-body').trim();
 }
 
 // ─────────────────────────────────────────
@@ -405,39 +544,54 @@ function initNavbar() {
 function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // ── Hero Animations ──
-    const heroTl = gsap.timeline({ delay: 0.3 });
+    // ── Liquid Glass Hero Animations (spring physics feel) ──
+    const heroTl = gsap.timeline({ delay: 0.2 });
+
+    // Set initial states with slight blur for glassy reveal
+    gsap.set('.hero-badge', { filter: 'blur(8px)' });
+    gsap.set('.hero-title', { filter: 'blur(12px)' });
+    gsap.set('.hero-tagline', { filter: 'blur(6px)' });
+    gsap.set('.hero-details', { filter: 'blur(4px)' });
+    gsap.set('.hero-buttons', { filter: 'blur(6px)' });
+    gsap.set('.hero-image', { filter: 'blur(16px)' });
 
     heroTl
         .to('.hero-badge', {
-            opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+            opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.9,
+            ease: 'back.out(1.7)'
         })
         .to('.hero-title', {
-            opacity: 1, y: 0, duration: 0.9, ease: 'power3.out'
-        }, '-=0.5')
+            opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.0,
+            ease: 'back.out(1.4)'
+        }, '-=0.55')
         .to('.hero-tagline', {
-            opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
-        }, '-=0.5')
+            opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75,
+            ease: 'power4.out'
+        }, '-=0.55')
         .to('.hero-details', {
-            opacity: 1, y: 0, duration: 0.6, ease: 'power3.out'
-        }, '-=0.4')
+            opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.65,
+            ease: 'power3.out'
+        }, '-=0.45')
         .to('.hero-buttons', {
-            opacity: 1, y: 0, duration: 0.7, ease: 'power3.out'
-        }, '-=0.3')
+            opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75,
+            ease: 'back.out(1.5)'
+        }, '-=0.4')
         .to('.hero-image', {
-            opacity: 1, x: 0, duration: 1, ease: 'power3.out'
-        }, '-=0.6')
+            opacity: 1, x: 0, filter: 'blur(0px)', duration: 1.1,
+            ease: 'back.out(1.2)'
+        }, '-=0.65')
         .to('.scroll-indicator', {
-            opacity: 1, duration: 0.5, ease: 'power2.out'
-        }, '-=0.2');
+            opacity: 1, duration: 0.6, ease: 'power2.out'
+        }, '-=0.3');
 
     // Set initial positions
-    gsap.set('.hero-badge', { y: 20 });
-    gsap.set('.hero-title', { y: 30 });
-    gsap.set('.hero-tagline', { y: 20 });
-    gsap.set('.hero-details', { y: 20 });
-    gsap.set('.hero-buttons', { y: 20 });
-    gsap.set('.hero-image', { x: 40 });
+    gsap.set('.hero-badge', { y: 24, opacity: 0 });
+    gsap.set('.hero-title', { y: 36, opacity: 0 });
+    gsap.set('.hero-tagline', { y: 22, opacity: 0 });
+    gsap.set('.hero-details', { y: 18, opacity: 0 });
+    gsap.set('.hero-buttons', { y: 22, opacity: 0 });
+    gsap.set('.hero-image', { x: 48, opacity: 0 });
+    gsap.set('.scroll-indicator', { opacity: 0 });
 
     // ── Events Section ──
     gsap.to('.event-label', {
@@ -458,37 +612,38 @@ function initAnimations() {
     });
     gsap.set('.event-title', { y: 20 });
 
-    // Tech separator
-    gsap.to('.tech-separator', {
-        scrollTrigger: {
-            trigger: '.tech-separator',
-            start: 'top 85%',
-        },
-        opacity: 1, duration: 0.7, ease: 'power2.out'
-    });
+    // Tech separator — liquid glass reveal
+    gsap.fromTo('.tech-separator',
+        { opacity: 0, scaleX: 0.85, filter: 'blur(8px)' },
+        {
+            scrollTrigger: { trigger: '.tech-separator', start: 'top 85%' },
+            opacity: 1, scaleX: 1, filter: 'blur(0px)',
+            duration: 0.9, ease: 'back.out(1.6)'
+        }
+    );
 
     // Non-tech separator
-    gsap.to('.nontech-separator', {
-        scrollTrigger: {
-            trigger: '.nontech-separator',
-            start: 'top 85%',
-        },
-        opacity: 1, duration: 0.7, ease: 'power2.out'
-    });
+    gsap.fromTo('.nontech-separator',
+        { opacity: 0, scaleX: 0.85, filter: 'blur(8px)' },
+        {
+            scrollTrigger: { trigger: '.nontech-separator', start: 'top 85%' },
+            opacity: 1, scaleX: 1, filter: 'blur(0px)',
+            duration: 0.9, ease: 'back.out(1.6)'
+        }
+    );
 
-    // Stagger event cards
+    // Stagger event cards — glass drop-in with spring
     gsap.utils.toArray('[data-animate="event"]').forEach((card, i) => {
-        gsap.from(card, {
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 88%',
-            },
-            opacity: 0,
-            y: 40,
-            duration: 0.7,
-            delay: (i % 3) * 0.12,
-            ease: 'power3.out'
-        });
+        gsap.fromTo(card,
+            { opacity: 0, y: 50, scale: 0.94, filter: 'blur(10px)' },
+            {
+                scrollTrigger: { trigger: card, start: 'top 89%' },
+                opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
+                duration: 0.85,
+                delay: (i % 4) * 0.09,
+                ease: 'back.out(1.4)'
+            }
+        );
     });
 
     // ── Faculty Section ──
@@ -510,42 +665,43 @@ function initAnimations() {
     });
     gsap.set('.faculty-title', { y: 20 });
 
-    // Faculty category separators
+    // Faculty category separators — liquid reveal
     gsap.utils.toArray('.faculty-separator').forEach((sep) => {
-        gsap.to(sep, {
-            scrollTrigger: {
-                trigger: sep,
-                start: 'top 85%',
-            },
-            opacity: 1, duration: 0.7, ease: 'power2.out'
-        });
+        gsap.fromTo(sep,
+            { opacity: 0, x: -20, filter: 'blur(6px)' },
+            {
+                scrollTrigger: { trigger: sep, start: 'top 86%' },
+                opacity: 1, x: 0, filter: 'blur(0px)',
+                duration: 0.8, ease: 'back.out(1.5)'
+            }
+        );
     });
 
-    // Stagger faculty cards
+    // Stagger faculty cards — glass drop spring
     gsap.utils.toArray('[data-animate="faculty"]').forEach((card, i) => {
-        gsap.from(card, {
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 88%',
-            },
-            opacity: 0,
-            y: 40,
-            duration: 0.7,
-            delay: i * 0.1,
-            ease: 'power3.out'
-        });
+        gsap.fromTo(card,
+            { opacity: 0, y: 44, scale: 0.93, filter: 'blur(10px)' },
+            {
+                scrollTrigger: { trigger: card, start: 'top 89%' },
+                opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
+                duration: 0.8,
+                delay: i * 0.08,
+                ease: 'back.out(1.5)'
+            }
+        );
     });
 
-    // ── Footer ──
+    // ── Footer — glass fade up ──
     gsap.utils.toArray('.footer-item').forEach((item, i) => {
-        gsap.to(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 90%',
-            },
-            opacity: 1, y: 0, duration: 0.6, delay: i * 0.1, ease: 'power3.out'
-        });
-        gsap.set(item, { y: 20 });
+        gsap.fromTo(item,
+            { opacity: 0, y: 28, filter: 'blur(6px)' },
+            {
+                scrollTrigger: { trigger: item, start: 'top 91%' },
+                opacity: 1, y: 0, filter: 'blur(0px)',
+                duration: 0.7, delay: i * 0.1,
+                ease: 'back.out(1.4)'
+            }
+        );
     });
 }
 
@@ -562,6 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
     // Initialize features
+    initThemeToggle();
     initParticles();
     initNavbar();
 
