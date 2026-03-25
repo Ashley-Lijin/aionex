@@ -194,7 +194,7 @@ const facultyCategories = {
             name: "Mr. Ramesh",
             designation: "Assistant Professor",
             role: "Spotify(Song Guessing)",
-            image: "assets/def-ava.avif"
+            image: "assets/remesh.jpeg"
         }
     ],
     staff: [
